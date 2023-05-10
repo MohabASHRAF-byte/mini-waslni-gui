@@ -1,4 +1,4 @@
-#include "DFS.h"
+#include "dfs.h"
 
 void DFS::run(map<int, set<int>> &convertedGraph) {
     //start the helper with the source coordinates

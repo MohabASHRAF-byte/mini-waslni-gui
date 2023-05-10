@@ -18,7 +18,7 @@ class MainWindow : public QWidget
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr,QApplication* qapp = nullptr);
     ~MainWindow();
 
 private slots:
@@ -26,8 +26,11 @@ private slots:
 
     void on_edit_pushButton_clicked();
 
+    void on_exit_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QApplication* qapp;
     Navigate* navigateMenu;
     Edit* editMenu;
     Map *mp;

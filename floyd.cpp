@@ -1,4 +1,4 @@
-#include "Floyd.h"
+#include "floyd.h"
 void Floyd::setPoints(Point source, Point dst)
 {
     this->src = source;

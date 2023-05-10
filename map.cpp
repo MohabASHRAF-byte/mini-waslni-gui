@@ -1,8 +1,8 @@
-#include "Map.h"
+#include "map.h"
 
 Map::Map() {
-    ifstream citiesFile(R"(F:\QT\projects\final_final_final_mini-waslni\resourcs\cities.txt)");
-    ifstream edgesFile(R"(F:\QT\projects\final_final_final_mini-waslni\resourcs\edges.txt)");
+    ifstream citiesFile("/home/mohanadkhaled/gui-mini-wasalni/mini-waslni-gui-main/resourcs/cities.txt");
+    ifstream edgesFile("/home/mohanadkhaled/gui-mini-wasalni/mini-waslni-gui-main/resourcs/edges.txt");
     string name, neighborName;
     int x, y, size, weight;
     while (citiesFile >> name >> x >> y) {
@@ -153,8 +153,8 @@ void Map::deleteMap() {
 }
 
 Map::~Map() {
-    ofstream citiesFile("cities.txt");
-    ofstream edgesFile("edges.txt");
+    ofstream citiesFile("/home/mohanadkhaled/gui-mini-wasalni/mini-waslni-gui-main/resourcs/cities.txt");
+    ofstream edgesFile("/home/mohanadkhaled/gui-mini-wasalni/mini-waslni-gui-main/resourcs/edges.txt");
     for (auto &city: graph) {
         citiesFile << city.second->name << ' ' << city.second->point.x << ' ' << city.second->point.y << endl;
 

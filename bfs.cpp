@@ -1,4 +1,4 @@
-#include "BFS.h"
+#include "bfs.h"
 
 void BFS::run(map<int, set<int>> &convertedGraph) {
     int source = NodeConverter::axisToId(src.x, src.y, limitY);

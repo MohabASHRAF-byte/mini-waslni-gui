@@ -126,3 +126,28 @@ void Navigate::on_run_pushButton_clicked()
 
 }
 
+void Navigate::paintEvent(QPaintEvent *event)
+{
+        QPainter painter(this);
+        auto graph = mp->getGraph();
+        // Iterate through the nodes in the graph
+        for (auto& iter : graph) {
+            Node* node = iter.second;
+            int x = node->point.x+200;
+            int y = node->point.y;
+            // Draw a circle for the node
+            int radius = 10; // adjust the size of the circle as needed
+            painter.setBrush(Qt::red); // set the fill color of the circle
+            painter.setPen(Qt::black); // set the outline color of the circle
+            painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
+
+            // Draw the label for the node
+            painter.drawText(QPointF(x + radius, y + radius), QString::fromStdString(iter.first));
+            for (auto& edge : node->edges) {
+                Node* otherNode = graph[edge.first];
+                // Draw a line connecting the two nodes
+                painter.drawLine(x, y, otherNode->point.x + 200, otherNode->point.y);
+            }
+        }
+}
+

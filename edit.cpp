@@ -26,18 +26,21 @@ void Edit::on_back_pushButton_clicked()
 
 
 void Edit::reset(){
-    qDebug()<<"here 1.7\n";
     ui->add_city_groupBox->setVisible(false);
     ui->delete_edge_groupBox->setVisible(false);
     ui->delete_city_groupBox_->setVisible(false);
     ui->add_edge_groupBox_->setVisible(false);
-    qDebug()<<"here 1.8\n";
 
     ui->plainTextEdit->clear();
     ui->plainTextEdit_2->clear();
     ui->plainTextEdit_3->clear();
     ui->operation_groupBox->setEnabled(true);
-    qDebug()<<"here 1.9\n";
+
+    ui->add_edge_to_comboBox_->clear();
+    ui->delete_edge_from_comboBox->clear();
+    ui->delete_edge_to_comboBox->clear();
+    ui->add_edge_from_comboBox_->clear();
+
 
 }
 
@@ -111,6 +114,7 @@ void Edit::on_delete_edge_radioButton_clicked()
 
 void Edit::on_delete_edge_from_comboBox_currentTextChanged(const QString &arg1)
 {
+    if(arg1 == "")return;
     ui->delete_edge_to_comboBox->clear();
     auto node = mp->getGraph()[arg1.toStdString()];
     for(auto &i : node->edges){
@@ -172,7 +176,6 @@ void Edit::on_delete_city_save_pushButton_clicked()
     auto &graph = mp->getGraphAddress(); //we get the address of the graph and edit on it
     auto &convertedGraph = mp->getConvertedGraphAddress();
     auto &IdToName = mp->getIdToNameAddress();
-    qDebug()<<"1.1\n";
     //deleting all edges that go to our city
     for (auto &edge: graph[city]->edges) {
         graph[edge.first]->edges.erase(city);
@@ -181,10 +184,7 @@ void Edit::on_delete_city_save_pushButton_clicked()
         cityNode.second->edges.erase(city);
     }
 
-    qDebug()<<"1.2\n";
-
     int id = NodeConverter::axisToId(graph[city]->point.x, graph[city]->point.y, limitY);
-    qDebug()<<"1.3\n";
     mp->getGraphAddress().erase(city);
 
     for (auto &it: convertedGraph[id]) {
@@ -194,10 +194,8 @@ void Edit::on_delete_city_save_pushButton_clicked()
     convertedGraph[id].clear();
     //convertedGraph.erase(id);
     IdToName.erase(id);
-    qDebug()<<"1.4\n";
 
     reset();
-    qDebug()<<"1.5\n";
 
 }
 
@@ -216,6 +214,7 @@ void Edit::on_add_edge_radioButton_clicked()
 
 void Edit::on_add_edge_from_comboBox__currentTextChanged(const QString &arg1)
 {
+    if(arg1 == "")return;
     ui->add_edge_to_comboBox_->clear();
     //show all the edges that the arg1(from) can go to(existing edges will not appear)
     auto &node = mp->getGraphAddress();
@@ -234,6 +233,9 @@ void Edit::on_add_edge_save_pushButton__clicked()
     auto& graph = mp->getGraphAddress();
     auto& convertedGraph = mp->getConvertedGraphAddress();
     string city1, city2;
+    city1= ui->add_edge_from_comboBox_->currentText().toStdString();
+    city2= ui->add_edge_to_comboBox_->currentText().toStdString();
+
     bool isDirected = ui->isdirected_add_edge_checkBox->isChecked();
 
     int distance = (int) sqrt(pow((graph[city1]->point.x - graph[city2]->point.x), 2) +
@@ -250,35 +252,53 @@ void Edit::on_add_edge_save_pushButton__clicked()
     ///./////
     if(!isDirected)
         convertedGraph[id2].insert(id1); //
+    reset();
 }
+void Edit::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(this);
+    auto graph = mp->getGraph();
+    // Iterate through the nodes in the graph
+    for (auto& iter : graph) {
+        Node* node = iter.second;
+        int x = node->point.x+200;
+        int y = node->point.y;
+        // Draw a circle for the node
+        int radius = 10; // adjust the size of the circle as needed
+        painter.setBrush(Qt::red); // set the fill color of the circle
+        painter.setPen(Qt::black); // set the outline color of the circle
+        painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
 
-//void Edit::paintEvent(QPaintEvent *event)
-//{
-//    QPainter painter(this);
-//    auto graph = mp->getGraph();
-//    // Iterate through the nodes in the graph
-//    for (auto& iter : graph) {
-//        Node* node = iter.second;
-//        int x = node->point.x+200;
-//        int y = node->point.y;
-//        // Draw a circle for the node
-//        int radius = 10; // adjust the size of the circle as needed
-//        painter.setBrush(Qt::red); // set the fill color of the circle
-//        painter.setPen(Qt::black); // set the outline color of the circle
-//        painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
-
-//        // Draw the label for the node
-//        painter.drawText(QPointF(x + radius, y + radius), QString::fromStdString(iter.first));
-//        for (auto& edge : node->edges) {
-//            Node* otherNode = graph[edge.first];
-//            // Draw a line connecting the two nodes
-//            painter.drawLine(x, y, otherNode->point.x + 200, otherNode->point.y);
-//        }
-//    }
-//}
+        // Draw the label for the node
+        painter.drawText(QPointF(x + radius, y + radius), QString::fromStdString(iter.first));
+        for (auto& edge : node->edges) {
+            Node* otherNode = graph[edge.first];
+            // Draw a line connecting the two nodes
+            painter.drawLine(x, y, otherNode->point.x + 200, otherNode->point.y);
+        }
+    }
+}
 
 
 void Edit::on_adding_city_back_clicked()
+{
+    reset();
+}
+
+
+void Edit::on_deleting_edge_pushButton_clicked()
+{
+    reset();
+}
+
+
+void Edit::on_delete_city_pushButton_clicked()
+{
+    reset();
+}
+
+
+void Edit::on_pushButton_clicked()
 {
     reset();
 }

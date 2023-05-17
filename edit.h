@@ -53,10 +53,16 @@ private slots:
 
     void on_adding_city_back_clicked();
 
+    void on_deleting_edge_pushButton_clicked();
+
+    void on_delete_city_pushButton_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::Edit *ui;
     Map* mp;
-//    virtual void paintEvent(QPaintEvent* event);
+    virtual void paintEvent(QPaintEvent* event);
 
 };
 

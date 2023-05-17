@@ -1,6 +1,7 @@
-Mo'men 12 200
-Mohab 50 350
+Mo'men 200 200
+Mohab 555 555
 Mohanad 133 44
 RealMadrid 100 120
 Tasneem 70 400
 a 31 15
+zezzzo 340 340

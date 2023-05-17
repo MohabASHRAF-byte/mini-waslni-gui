@@ -3,7 +3,7 @@
 #define POINT_H
 #pragma once
 #define oo INT32_MAX
-const int limitY = 15;
+const int limitY = 2000;
 
 class Point{
 public:

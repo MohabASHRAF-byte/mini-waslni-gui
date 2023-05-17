@@ -7,6 +7,9 @@
 
 #include <QPainter>
 #include <QPaintEvent>
+#include <QRegularExpression>
+#include <QDebug>
+#include <QString>
 
 namespace Ui {
 class Edit;
@@ -48,10 +51,12 @@ private slots:
 
     void on_add_edge_save_pushButton__clicked();
 
+    void on_adding_city_back_clicked();
+
 private:
     Ui::Edit *ui;
     Map* mp;
-    virtual void paintEvent(QPaintEvent* event);
+//    virtual void paintEvent(QPaintEvent* event);
 
 };
 

@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="Asset 2.png">Assets/Asset 2.png</file>
+        <file alias="Asset 3.png">Assets/Asset 3.png</file>
+        <file alias="Asset 4.png">Assets/Asset 4.png</file>
+        <file alias="Asset 5.png">Assets/Asset 5.png</file>
+        <file alias="Asset 6.png">Assets/Asset 6.png</file>
+        <file alias="Asset 7.png">Assets/Asset 7.png</file>
+        <file alias="Asset 8.png">Assets/Asset 8.png</file>
+        <file alias="Asset 9.png">Assets/Asset 9.png</file>
+        <file alias="Asset 10.png">Assets/Asset 10.png</file>
+        <file alias="Asset 11.png">Assets/Asset 11.png</file>
+        <file alias="Asset 12.png">Assets/Asset 12.png</file>
+        <file alias="Asset 13.png">Assets/Asset 13.png</file>
+        <file alias="Asset 14.png">Assets/Asset 14.png</file>
+        <file alias="Asset 15.png">Assets/Asset 15.png</file>
+        <file alias="Asset 16.png">Assets/Asset 16.png</file>
+    </qresource>
+</RCC>

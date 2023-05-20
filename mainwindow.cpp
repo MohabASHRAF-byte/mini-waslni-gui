@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent,QApplication* qapp)
     this->navigateMenu=new Navigate(this,this->mp);
     this->editMenu=new Edit(this,this->mp);
 
-    QPixmap backgroundImage(R"(C:\Users\Moamen Sherif\Desktop\drive-download-20230520T180835Z-001\Asset 11.png)"); // Replace with your image path
+    QPixmap backgroundImage(":/images/Asset 11.png"); // Replace with your image path
     // Create a palette with the desired background image
     QPalette palette;
     palette.setBrush(QPalette::Window, QBrush(backgroundImage));

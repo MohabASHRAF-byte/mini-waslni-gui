@@ -12,9 +12,8 @@ Navigate::Navigate(QWidget *parent,Map * mp) :
     for(auto &algo :algos)
         ui->algorithm_comboBox->addItem(algo);
 
-    image.load(R"(C:\Users\Moamen Sherif\Desktop\drive-download-20230520T180835Z-001\Asset 5.png)");
-    imageActive.load(R"(C:\Users\Moamen Sherif\Desktop\drive-download-20230520T180835Z-001\Asset 4.png)");
-
+    image.load(":/images/Asset 5.png");
+    imageActive.load(":/images/Asset 4.png");
 }
 void Navigate::update(){
     ui->from_comboBox->clear();

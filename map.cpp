@@ -1,8 +1,8 @@
 #include "map.h"
 
 Map::Map() {
-    ifstream citiesFile("F:/University/Second Year/mini-waslni-gui/resourcs/cities.txt");
-    ifstream edgesFile("F:/University/Second Year/mini-waslni-gui/resourcs/edges.txt");
+    ifstream citiesFile(":/data/cities.txt");
+    ifstream edgesFile(":/data/edges.txt");
     string name, neighborName;
     int x, y, size, weight;
     while (citiesFile >> name >> x >> y) {

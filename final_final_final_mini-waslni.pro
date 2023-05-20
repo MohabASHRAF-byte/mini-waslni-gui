@@ -44,21 +44,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Res.qrc
-
-DISTFILES += \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 10.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 11.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 12.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 13.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 14.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 15.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 16.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 2.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 3.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 4.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 5.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 6.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 7.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 8.png \
-    C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png
+    Res.qrc \
+    images.qrc

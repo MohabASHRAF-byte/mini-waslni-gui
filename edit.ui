@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 6.png&quot;);</string>
+   <string notr="true">background-image: url(&quot;:/images/Asset 6.png&quot;);</string>
   </property>
   <widget class="QPushButton" name="back_pushButton">
    <property name="geometry">
@@ -27,7 +27,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">color: white; 
-background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 7.png&quot;);
+background-image: url(&quot;:/images/Asset 7.png&quot;);
 border-radius: 15px;</string>
    </property>
    <property name="text">
@@ -44,7 +44,7 @@ border-radius: 15px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 15.png&quot;);</string>
+    <string notr="true">background-image: url(&quot;:/images/Asset 15.png&quot;);</string>
    </property>
    <property name="title">
     <string/>
@@ -185,7 +185,7 @@ border-radius: 15px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>
@@ -210,7 +210,7 @@ color: white;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>
@@ -293,7 +293,7 @@ color: white;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>
@@ -318,7 +318,7 @@ color: white;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>
@@ -408,7 +408,7 @@ color: white;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>
@@ -433,7 +433,7 @@ color: white;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>
@@ -498,7 +498,7 @@ color: white;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>
@@ -523,7 +523,7 @@ color: white;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 9.png&quot;);
+          <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
 border: none;
 color: white;</string>

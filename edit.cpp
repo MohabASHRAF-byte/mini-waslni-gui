@@ -9,7 +9,7 @@ Edit::Edit(QWidget *parent,Map* mp) :
     ui->setupUi(this);
     this->mp=mp;
     reset();
-    image.load(R"(C:\Users\Moamen Sherif\Desktop\drive-download-20230520T180835Z-001\Asset 5.png)");
+    image.load(":/images/Asset 5.png");
 }
 
 Edit::~Edit()

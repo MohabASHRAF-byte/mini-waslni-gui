@@ -9,7 +9,6 @@ Edit::Edit(QWidget *parent,Map* mp) :
     ui->setupUi(this);
     this->mp=mp;
     reset();
-
 }
 
 Edit::~Edit()
@@ -61,9 +60,7 @@ bool containsOnlyNumbers(const QString& text)
 
 void Edit::on_add_city_save_pushButton_clicked()
 {
-//    try{
-
-//    }
+    update();
     QString city =  ui->plainTextEdit->toPlainText().trimmed();
     QString x_axis_str = ui->plainTextEdit_3->toPlainText().trimmed();
     QString y_axis_str = ui->plainTextEdit_2->toPlainText().trimmed();
@@ -126,6 +123,7 @@ void Edit::on_delete_edge_from_comboBox_currentTextChanged(const QString &arg1)
 
 void Edit::on_delete_edge_save_pushButton_clicked()
 {
+    update();
     string fromCity = ui->delete_edge_from_comboBox->currentText().toStdString();
     string toCity = ui->delete_edge_to_comboBox->currentText().toStdString();
 
@@ -171,6 +169,7 @@ void Edit::on_delete_city_radioButton_clicked()
 
 void Edit::on_delete_city_save_pushButton_clicked()
 {
+    update();
     string city = ui->delete_city_comboBox->currentText().toStdString();
 
     auto &graph = mp->getGraphAddress(); //we get the address of the graph and edit on it
@@ -229,7 +228,7 @@ void Edit::on_add_edge_from_comboBox__currentTextChanged(const QString &arg1)
 
 void Edit::on_add_edge_save_pushButton__clicked()
 {
-
+    update();
     auto& graph = mp->getGraphAddress();
     auto& convertedGraph = mp->getConvertedGraphAddress();
     string city1, city2;
@@ -254,6 +253,7 @@ void Edit::on_add_edge_save_pushButton__clicked()
         convertedGraph[id2].insert(id1); //
     reset();
 }
+
 void Edit::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);

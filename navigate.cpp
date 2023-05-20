@@ -14,7 +14,6 @@ Navigate::Navigate(QWidget *parent,Map * mp) :
 
 }
 void Navigate::update(){
- qDebug()<<"llll\n";
     ui->from_comboBox->clear();
     ui->to_comboBox->clear();
 //
@@ -75,7 +74,7 @@ void Navigate::on_run_pushButton_clicked()
        Floyd *floyd = new Floyd();
        floyd->build(convertedGraph);
        floyd->run(convertedGraph);
-        QVector<Point> path;
+
 
         string city1 =ui->from_comboBox->currentText().toStdString();
         string city2 =ui->to_comboBox->currentText().toStdString();
@@ -123,31 +122,45 @@ void Navigate::on_run_pushButton_clicked()
             qDebug() << IdToName[cityId] << ' ';
             qDebug() << path[i].x << " " << path[i].y << "\n";
         }
-
+        this->resize(width() - 1, height() - 1);
+        this->resize(width() + 1, height() + 1);
 }
 
 void Navigate::paintEvent(QPaintEvent *event)
 {
-        QPainter painter(this);
-        auto graph = mp->getGraph();
-        // Iterate through the nodes in the graph
-        for (auto& iter : graph) {
-            Node* node = iter.second;
-            int x = node->point.x+200;
-            int y = node->point.y;
-            // Draw a circle for the node
-            int radius = 10; // adjust the size of the circle as needed
-            painter.setBrush(Qt::red); // set the fill color of the circle
-            painter.setPen(Qt::black); // set the outline color of the circle
-            painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
+    QPainter painter(this);
+    auto graph = mp->getGraph();
+    // Iterate through the nodes in the graph
+    for (auto& iter : graph) {
+        Node* node = iter.second;
+        int x = node->point.x+200;
+        int y = node->point.y;
+        // Draw a circle for the node
+        int radius = 10; // adjust the size of the circsle as needed
+        painter.setBrush(Qt::red); // set the fill color of the circle
+        painter.setPen(Qt::black); // set the outline color of the circle
+        painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
 
-            // Draw the label for the node
-            painter.drawText(QPointF(x + radius, y + radius), QString::fromStdString(iter.first));
-            for (auto& edge : node->edges) {
-                Node* otherNode = graph[edge.first];
-                // Draw a line connecting the two nodes
-                painter.drawLine(x, y, otherNode->point.x + 200, otherNode->point.y);
-            }
+        // Draw the label for the node
+        painter.drawText(QPointF(x + radius, y + radius), QString::fromStdString(iter.first));
+        for (auto& edge : node->edges) {
+            Node* otherNode = graph[edge.first];
+            // Draw a line connecting the two nodes
+            painter.drawLine(x, y, otherNode->point.x + 200, otherNode->point.y);
         }
-}
+    }
 
+    for (int i = 1; i < path.size(); i++) {
+        int x = path[i].x+200;
+        int y = path[i].y;
+        // Draw a circle for the node
+        int radius = 10; // adjust the size of the circsle as needed
+        painter.setBrush(Qt::yellow); // set the fill color of the circle
+        painter.setPen(Qt::blue); // set the outline color of the circle
+        painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
+
+        // Draw a line connecting the two nodes
+        if(i == path.size() - 1) continue;
+        painter.drawLine(x, y, path[i + 1].x + 200, path[i + 1].y);
+    }
+}

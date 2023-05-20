@@ -28,6 +28,7 @@ public:
     std::map<string,Node*>* graph;
     void update();
     ~Navigate();
+    QVector<Point> path;
 
 private slots:
 

@@ -12,6 +12,9 @@ Navigate::Navigate(QWidget *parent,Map * mp) :
     for(auto &algo :algos)
         ui->algorithm_comboBox->addItem(algo);
 
+    image.load(R"(C:\Users\Moamen Sherif\Desktop\drive-download-20230520T180835Z-001\Asset 5.png)");
+    imageActive.load(R"(C:\Users\Moamen Sherif\Desktop\drive-download-20230520T180835Z-001\Asset 4.png)");
+
 }
 void Navigate::update(){
     ui->from_comboBox->clear();
@@ -133,34 +136,45 @@ void Navigate::paintEvent(QPaintEvent *event)
     // Iterate through the nodes in the graph
     for (auto& iter : graph) {
         Node* node = iter.second;
-        int x = node->point.x+200;
+        int x = node->point.x+240;
         int y = node->point.y;
         // Draw a circle for the node
-        int radius = 10; // adjust the size of the circsle as needed
-        painter.setBrush(Qt::red); // set the fill color of the circle
-        painter.setPen(Qt::black); // set the outline color of the circle
-        painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
+        int radius = 15; // adjust the size of the circsle as needed
+        painter.setPen(Qt::white);
 
-        // Draw the label for the node
-        painter.drawText(QPointF(x + radius, y + radius), QString::fromStdString(iter.first));
         for (auto& edge : node->edges) {
             Node* otherNode = graph[edge.first];
             // Draw a line connecting the two nodes
-            painter.drawLine(x, y, otherNode->point.x + 200, otherNode->point.y);
+            painter.drawLine(x, y, otherNode->point.x + 240, otherNode->point.y);
         }
     }
 
+    for (auto& iter : graph) {
+        Node* node = iter.second;
+        int x = node->point.x+240;
+        int y = node->point.y;
+        int radius = 15; // adjust the size of the circsle as needed
+
+        painter.drawPixmap(x - radius, y - radius, radius * 2, radius * 2, image);
+        painter.drawText(QPointF(x + 15, y + 15), QString::fromStdString(iter.first));
+    }
+
     for (int i = 1; i < path.size(); i++) {
-        int x = path[i].x+200;
+        int x = path[i].x+240;
         int y = path[i].y;
         // Draw a circle for the node
-        int radius = 10; // adjust the size of the circsle as needed
-        painter.setBrush(Qt::yellow); // set the fill color of the circle
-        painter.setPen(Qt::blue); // set the outline color of the circle
-        painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
+        painter.setPen(Qt::green); // set the outline color of the circle
 
         // Draw a line connecting the two nodes
         if(i == path.size() - 1) continue;
-        painter.drawLine(x, y, path[i + 1].x + 200, path[i + 1].y);
+        painter.drawLine(x, y, path[i + 1].x + 240, path[i + 1].y);
+    }
+
+    for (int i = 1; i < path.size(); i++) {
+        int x = path[i].x+240;
+        int y = path[i].y;
+        // Draw a circle for the node
+        int radius = 15; // adjust the size of the circsle as needed
+        painter.drawPixmap(x - radius, y - radius, radius * 2, radius * 2, imageActive);
     }
 }

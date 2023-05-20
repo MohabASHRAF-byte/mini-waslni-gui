@@ -23,6 +23,7 @@ public:
     explicit Edit(QWidget *parent = nullptr,Map* mp=nullptr);
     void reset();
     ~Edit();
+    QPixmap image;
 
 private slots:
     void on_back_pushButton_clicked();

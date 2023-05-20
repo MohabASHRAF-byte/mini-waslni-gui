@@ -9,6 +9,7 @@ Edit::Edit(QWidget *parent,Map* mp) :
     ui->setupUi(this);
     this->mp=mp;
     reset();
+    image.load(R"(C:\Users\Moamen Sherif\Desktop\drive-download-20230520T180835Z-001\Asset 5.png)");
 }
 
 Edit::~Edit()
@@ -46,7 +47,7 @@ void Edit::reset(){
 
 void Edit::on_add_city_radioButton_clicked()
 {
-    ui->operation_groupBox->setEnabled(false);
+    reset();
     ui->add_city_groupBox->setVisible(true);
 }
 
@@ -67,6 +68,7 @@ void Edit::on_add_city_save_pushButton_clicked()
 
     if(city.isEmpty() || x_axis_str.isEmpty()|| y_axis_str.isEmpty())
     {
+
         QMessageBox::warning(this, "Warning", "You can't keep empty fields");
         return;
     }
@@ -81,6 +83,8 @@ void Edit::on_add_city_save_pushButton_clicked()
     int x_axis =x_axis_str.toInt();
     int y_axis =y_axis_str.toInt();
     auto &graph = mp->getGraphAddress();
+
+    for(auto &i : cityName) if(i == ' ') i = '_';
     //we get the address of the graph and edit on it
 
     if (graph[cityName]) {
@@ -101,6 +105,7 @@ void Edit::on_add_city_save_pushButton_clicked()
 
 void Edit::on_delete_edge_radioButton_clicked()
 {
+    reset();
     ui->delete_edge_groupBox->setVisible(true);
     for(auto &i:mp->getGraph()){
         QString city = QString::fromStdString(i.first);  // Convert std::string to QString
@@ -154,9 +159,9 @@ void Edit::on_delete_edge_save_pushButton_clicked()
 
 void Edit::on_delete_city_radioButton_clicked()
 {
+    reset();
     ui->delete_city_comboBox->clear();
 
-    ui->operation_groupBox->setEnabled(false);
     ui->delete_city_groupBox_->setVisible(true);
 
     for(auto& node : mp->getGraph()){
@@ -201,7 +206,7 @@ void Edit::on_delete_city_save_pushButton_clicked()
 
 void Edit::on_add_edge_radioButton_clicked()
 {
-    ui->operation_groupBox->setEnabled(false);
+    reset();
     ui->add_edge_groupBox_->setVisible(true);
     auto &graph = mp->getGraphAddress();
     for(auto &i:graph){
@@ -242,7 +247,6 @@ void Edit::on_add_edge_save_pushButton__clicked()
     graph[city1]->edges[city2] = distance;
     if(!isDirected)
         graph[city2]->edges[city1] = distance;
-
     //Converter
     int id1 = NodeConverter::axisToId(graph[city1]->point.x, graph[city1]->point.y, limitY);
     int id2 = NodeConverter::axisToId(graph[city2]->point.x, graph[city2]->point.y, limitY);
@@ -261,24 +265,28 @@ void Edit::paintEvent(QPaintEvent *event)
     // Iterate through the nodes in the graph
     for (auto& iter : graph) {
         Node* node = iter.second;
-        int x = node->point.x+200;
+        int x = node->point.x+240;
         int y = node->point.y;
-        // Draw a circle for the node
-        int radius = 10; // adjust the size of the circle as needed
-        painter.setBrush(Qt::red); // set the fill color of the circle
-        painter.setPen(Qt::black); // set the outline color of the circle
-        painter.drawEllipse(x - radius , y - radius, radius * 2, radius * 2);
+        int radius = 15;
+        painter.setPen(Qt::white); // set the outline color of the circle
 
         // Draw the label for the node
         painter.drawText(QPointF(x + radius, y + radius), QString::fromStdString(iter.first));
         for (auto& edge : node->edges) {
             Node* otherNode = graph[edge.first];
             // Draw a line connecting the two nodes
-            painter.drawLine(x, y, otherNode->point.x + 200, otherNode->point.y);
+            painter.drawLine(x, y, otherNode->point.x + 240, otherNode->point.y);
         }
     }
-}
 
+    for (auto& iter : graph) {
+        Node* node = iter.second;
+        int x = node->point.x + 240;
+        int y = node->point.y;
+        int radius = 15;
+        painter.drawPixmap(x - radius, y - radius, radius * 2, radius * 2, image);
+    }
+}
 
 void Edit::on_adding_city_back_clicked()
 {

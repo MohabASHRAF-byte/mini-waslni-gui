@@ -29,6 +29,7 @@ public:
     void update();
     ~Navigate();
     QVector<Point> path;
+    QPixmap image, imageActive;
 
 private slots:
 

@@ -1,8 +1,8 @@
-Mo'men 200 200
+Benzema 200 300
+Haland 600 150
+Messi 620 350
+Moamen 100 100
+Modric 100 550
 Mohab 555 555
-Mohanad 133 44
-RealMadrid 100 120
-Tasneem 70 400
-a 31 15
-modric 600 50
-zezzzo 340 340
+Ter_stegen 50 400
+de_bruyne 350 120

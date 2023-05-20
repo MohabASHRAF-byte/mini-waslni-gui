@@ -6,45 +6,78 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>950</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
+  <property name="styleSheet">
+   <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 11.png&quot;);</string>
+  </property>
+  <widget class="QPushButton" name="exit_pushButton">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>150</y>
-     <width>131</width>
-     <height>231</height>
+     <x>375</x>
+     <y>400</y>
+     <width>202</width>
+     <height>52</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="navigate_pushButton">
-      <property name="text">
-       <string>Navigate</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="edit_pushButton">
-      <property name="text">
-       <string>Edit</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="exit_pushButton">
-      <property name="text">
-       <string>Exit</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 14.png&quot;);
+background-repeat: no-repeat;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="edit_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>375</x>
+     <y>300</y>
+     <width>202</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 13.png&quot;);
+background-repeat: no-repeat;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="navigate_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>375</x>
+     <y>200</y>
+     <width>202</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(&quot;C:/Users/Moamen Sherif/Desktop/drive-download-20230520T180835Z-001/Asset 12.png&quot;);
+background-repeat: no-repeat;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>

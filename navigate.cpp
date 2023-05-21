@@ -8,6 +8,8 @@ Navigate::Navigate(QWidget *parent,Map * mp) :
 {
     ui->setupUi(this);
     this->mp=mp;
+    ui->label_3->setVisible(false);
+    ui->label_4->setVisible(false);
     QString algos[]={"BFS","DFS","Dijkstra","Floyd"};
     for(auto &algo :algos)
         ui->algorithm_comboBox->addItem(algo);
@@ -39,6 +41,8 @@ void Navigate::on_back_pushButton_clicked()
 {
     hide();
     this->parentWidget()->show();
+    ui->label_3->setVisible(false);
+    ui->label_4->setVisible(false);
 }
 
 
@@ -58,11 +62,9 @@ void Navigate::on_Back_choose_pushButton_clicked()
 {
     ui->Destination_groupBox->setEnabled(!false);
     ui->algo_groupBox->setVisible(!true);
+    ui->label_3->setVisible(false);
+    ui->label_4->setVisible(false);
 }
-
-
-
-
 
 void Navigate::on_run_pushButton_clicked()
 {
@@ -126,6 +128,10 @@ void Navigate::on_run_pushButton_clicked()
         }
         this->resize(width() - 1, height() - 1);
         this->resize(width() + 1, height() + 1);
+
+        ui->label_3->setVisible(true);
+        ui->label_4->setVisible(true);
+        ui->label_4->setText(QString::number(path.front().x));
 }
 
 void Navigate::paintEvent(QPaintEvent *event)

@@ -10,6 +10,7 @@
 #include <QRegularExpression>
 #include <QDebug>
 #include <QString>
+#include "Algorithm.h"
 
 namespace Ui {
 class Edit;

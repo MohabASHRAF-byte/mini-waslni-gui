@@ -2,6 +2,8 @@
 #include "qmessagebox.h"
 #include "ui_edit.h"
 #include "NodeConverter.h"
+
+
 Edit::Edit(QWidget *parent,Map* mp) :
     QDialog(parent),
     ui(new Ui::Edit)
@@ -90,7 +92,7 @@ void Edit::on_add_city_save_pushButton_clicked()
     for(auto& node : graph){
         qDebug() << "here\n";
         qDebug() << node << "\n";
-        if(node.second->point.x == x_axis && node.second->point.y == y_axis){
+        if(Algorithm::dst({x_axis, y_axis}, node.second->point) <= 45){
             qDebug() << "in condition\n";
             QMessageBox::warning(this,"exist","the coordinates you entered already exists");
             reset();

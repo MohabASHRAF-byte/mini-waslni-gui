@@ -87,11 +87,22 @@ void Edit::on_add_city_save_pushButton_clicked()
     for(auto &i : cityName) if(i == ' ') i = '_';
     //we get the address of the graph and edit on it
 
+    for(auto& node : graph){
+        qDebug() << "here\n";
+        qDebug() << node << "\n";
+        if(node.second->point.x == x_axis && node.second->point.y == y_axis){
+            qDebug() << "in condition\n";
+            QMessageBox::warning(this,"exist","the coordinates you entered already exists");
+            reset();
+            return;
+        }
+    }
     if (graph[cityName]) {
         QMessageBox::warning(this,"exist","the name you entered already exists");
         reset();
         return;
     }
+
     Node *newNode = new Node(cityName, x_axis ,y_axis);
     graph[cityName] = newNode;
 

@@ -25,6 +25,9 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: white; 
 background-image: url(&quot;:/images/Asset 7.png&quot;);
@@ -184,6 +187,9 @@ border-radius: 15px;</string>
            <height>22</height>
           </size>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
@@ -208,6 +214,9 @@ color: white;</string>
            <width>16777215</width>
            <height>22</height>
           </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
@@ -292,6 +301,9 @@ color: white;</string>
            <height>22</height>
           </size>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
@@ -316,6 +328,9 @@ color: white;</string>
            <width>16777215</width>
            <height>22</height>
           </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
@@ -407,6 +422,9 @@ color: white;</string>
            <height>22</height>
           </size>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
@@ -431,6 +449,9 @@ color: white;</string>
            <width>16777215</width>
            <height>22</height>
           </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
@@ -497,6 +518,9 @@ color: white;</string>
            <height>22</height>
           </size>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);
 background-repeat: none;
@@ -521,6 +545,9 @@ color: white;</string>
            <width>16777215</width>
            <height>22</height>
           </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">background-image: url(&quot;:/images/Asset 9.png&quot;);

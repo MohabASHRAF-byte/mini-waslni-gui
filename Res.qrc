@@ -1,6 +1,6 @@
 <RCC>
-    <qresource prefix="/">
-        <file>resourcs/cities.txt</file>
-        <file>resourcs/edges.txt</file>
+    <qresource prefix="/data">
+        <file alias="cities.txt">resourcs/cities.txt</file>
+        <file alias="edges.txt">resourcs/edges.txt</file>
     </qresource>
 </RCC>

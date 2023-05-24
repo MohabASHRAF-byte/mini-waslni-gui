@@ -1,4 +1,4 @@
-#include "Dijkstra.h"
+#include "dijkstra.h"
 
 void Dijkstra::run(map<int, set<int>> &convertedGraph) {
     int start = NodeConverter::axisToId(src.x, src.y, limitY);

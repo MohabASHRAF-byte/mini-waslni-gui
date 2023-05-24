@@ -13,100 +13,237 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(&quot;:/images/Asset 6.png&quot;);</string>
+  </property>
   <widget class="QPushButton" name="back_pushButton">
    <property name="geometry">
     <rect>
      <x>820</x>
-     <y>560</y>
-     <width>101</width>
+     <y>590</y>
+     <width>111</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white; 
+background-image: url(&quot;:/images/Asset 7.png&quot;);
+border-radius: 15px;</string>
    </property>
    <property name="text">
     <string>Back</string>
    </property>
   </widget>
-  <widget class="QGroupBox" name="algo_groupBox">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>320</y>
-     <width>121</width>
-     <height>161</height>
+     <x>0</x>
+     <y>-10</y>
+     <width>200</width>
+     <height>661</height>
     </rect>
    </property>
-   <property name="title">
-    <string>Algorithm</string>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <widget class="QComboBox" name="algorithm_comboBox"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="run_pushButton">
-      <property name="text">
-       <string>Run</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="Back_choose_pushButton">
-      <property name="text">
-       <string>Back</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QGroupBox" name="Destination_groupBox">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>161</width>
-     <height>271</height>
-    </rect>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(&quot;:/images/Asset 15.png&quot;);</string>
    </property>
    <property name="title">
-    <string>Destination</string>
+    <string/>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>from</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="from_comboBox"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>to</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="to_comboBox"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="Execute_pushButton">
-      <property name="text">
-       <string>Execute</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <widget class="QGroupBox" name="algo_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>161</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="title">
+     <string>Algorithm</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QComboBox" name="algorithm_comboBox">
+       <property name="styleSheet">
+        <string notr="true">border: none; background-color: white;
+background-image: none;
+color: black;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="run_pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(&quot;:/images/Asset 16.png&quot;); border-radius: 10px; background-repeat: no-repeat; color: white;</string>
+       </property>
+       <property name="text">
+        <string>Run</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Back_choose_pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(&quot;:/images/Asset 16.png&quot;); border-radius: 10px; background-repeat: no-repeat; color: white;</string>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="Destination_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>161</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="title">
+     <string>Destination</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>from</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="from_comboBox">
+           <property name="styleSheet">
+            <string>border: none; background-color: white;
+background-image: none;
+color: black;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>to</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="to_comboBox">
+         <property name="styleSheet">
+          <string>border: none; background-color: white;
+background-image: none;
+color: black;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Execute_pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(&quot;:/images/Asset 16.png&quot;); border-radius: 10px; background-repeat: no-repeat; color: white;</string>
+       </property>
+       <property name="text">
+        <string>Execute</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>510</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px; color: white;</string>
+    </property>
+    <property name="text">
+     <string>Distance:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>510</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px; color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

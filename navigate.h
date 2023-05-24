@@ -10,6 +10,10 @@
 #include "dfs.h"
 #include "dijkstra.h"
 #include "floyd.h"
+
+#include <QPainter>
+#include <QPaintEvent>
+
 namespace Ui {
 class Navigate;
 }
@@ -24,6 +28,8 @@ public:
     std::map<string,Node*>* graph;
     void update();
     ~Navigate();
+    QVector<Point> path;
+    QPixmap image, imageActive;
 
 private slots:
 
@@ -39,6 +45,8 @@ private slots:
 private:
     Ui::Navigate *ui;
     Algorithm* algo;
+
+    virtual void paintEvent(QPaintEvent* event);
 
 };
 

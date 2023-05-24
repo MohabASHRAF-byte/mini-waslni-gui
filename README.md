@@ -27,7 +27,7 @@ The program ensures that any updates made to the map are saved using files. This
 To build and run the Mini Waslni project, the following dependencies are required:
 
 - C++ compiler that supports C++11 or later
-- Qt5 library
+- Qt6 library
 
 ## Build Instructions
 
